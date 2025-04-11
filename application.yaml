@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/LichBanned/c-day.git
+    repoURL: https://github.com/vadimso/c-day.git
     targetRevision: main
     path: .
     helm:
