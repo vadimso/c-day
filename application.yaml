@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: c-day
+  namespace: argocd  # Replace with the namespace where Argo CD is installed
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/LichBanned/c-day.git
+    targetRevision: main
+    path: .
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default  # Replace with your desired namespace
+  syncPolicy:
+    automated: {}
